@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Детский сад № 218 — Ростов-на-Дону</title>
+<style>
+:root{--bg:#fff8ec;--ink:#2b2a4c;--mut:#6b6a85;--sun:#ffc93c;--sky:#4cc3ff;--coral:#ff6b6b;--leaf:#4cc790;--card:#fff;--line:#f0e3c8}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 "Trebuchet MS","Segoe UI",Roboto,Arial,sans-serif;padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+a{color:inherit}.w{max-width:960px;margin:0 auto;padding:0 20px}
+.demo{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:6px 12px;padding-top:calc(6px + env(safe-area-inset-top))}
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:2px solid var(--line)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;height:58px}
+.logo{font-weight:800;text-decoration:none;font-size:18px}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:#fff;border-top:2px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+nav a{flex:1;text-align:center;padding:12px 2px;text-decoration:none;color:var(--mut);font-size:13px;font-weight:700;position:relative}
+nav a b{display:block;font-size:20px;line-height:1.1;transition:transform .25s}
+nav a.on{color:var(--ink)}nav a.on b{transform:translateY(-3px) scale(1.2)}
+@media(min-width:760px){nav{position:static;border:0;background:none;padding:0;gap:6px}nav a{flex:none;padding:8px 14px;font-size:15px}nav a b{display:none}nav a.on{background:var(--sun);border-radius:999px}body{padding-bottom:0}}
+.btn{position:relative;overflow:hidden;display:inline-block;padding:14px 24px;border-radius:999px;font:inherit;font-weight:800;text-decoration:none;border:2px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;transition:transform .12s,box-shadow .2s;box-shadow:0 4px 0 var(--ink);-webkit-tap-highlight-color:transparent}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.btn.y{background:var(--sun)}.btn.m{padding:8px 16px;font-size:14px}.btn.r{color:#c0392b}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.pg{display:none;padding:28px 0}.pg.on{display:block;animation:in .4s both}
+@keyframes in{from{opacity:0;transform:translateY(12px)}}
+h1{font-size:clamp(34px,8vw,60px);line-height:1.05;font-weight:800;letter-spacing:-.01em}
+h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--sun) 62%)}
+h2{font-size:28px;margin-bottom:6px}h3{margin-bottom:8px}
+.sub{color:var(--mut);margin-bottom:20px}.lead{font-size:18px;color:var(--mut);margin:14px 0 22px;max-width:30em}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.hero{display:grid;gap:20px;align-items:center}@media(min-width:800px){.hero{grid-template-columns:1.2fr 1fr}}
+.sunw{max-width:300px;margin:0 auto;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.sunw svg{width:100%;display:block;animation:bob 4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px) rotate(2deg)}}
+.rays{transform-origin:150px 150px;animation:spin 24s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.hint{text-align:center;color:var(--mut);font-size:13px}
+.blk{margin-top:40px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:10px 16px;border-radius:999px;border:2px solid var(--ink);background:#fff;font:inherit;font-weight:700;color:var(--ink);cursor:pointer;transition:transform .12s,background .2s}
+.chip:active{transform:scale(.94)}.chip.on{background:var(--sky)}
+.res,.card{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:20px;margin-top:16px;animation:in .35s both}
+.card{margin-top:0;margin-bottom:16px;animation:none}
+.res .em{font-size:44px}
+.day{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px}
+.day button{flex:none;border:2px solid var(--ink);background:#fff;border-radius:16px;padding:8px 12px;font:inherit;cursor:pointer;text-align:center;transition:transform .2s,background .2s}
+.day button b{display:block}.day button.on{background:var(--leaf);transform:translateY(-4px)}
+label{display:block;margin-bottom:14px;color:var(--mut);font-size:14px;font-weight:700}
+input,select,textarea{display:block;width:100%;margin-top:6px;padding:13px;border-radius:14px;border:2px solid var(--line);background:#fff;color:var(--ink);font:inherit}
+input:focus,select:focus,textarea:focus{border-color:var(--sky)}form{max-width:460px}
+.row{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px 0;border-bottom:2px dashed var(--line)}.row:last-child{border:0}
+.row small{display:block;color:var(--mut)}
+.ok{text-align:center;padding:20px 0}.ok svg{width:72px}
+.ok circle{stroke-dasharray:151;stroke-dashoffset:151;animation:dr .6s forwards}.ok path{stroke-dasharray:40;stroke-dashoffset:40;animation:dr .4s .5s forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.me{display:flex;gap:14px;align-items:center;margin-bottom:20px}
+.av{width:56px;height:56px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-items:center;font-size:24px;font-weight:800}
+dialog{background:#fff;color:var(--ink);border:2px solid var(--ink);border-radius:24px;padding:22px;width:min(94vw,400px);margin:auto;max-height:92vh}
+dialog::backdrop{background:rgba(43,42,76,.6)}dialog[open]{animation:pop .25s}@keyframes pop{from{opacity:0;transform:scale(.93)}}
+.tabs{display:flex;background:var(--bg);border-radius:999px;padding:4px;margin-bottom:16px}
+.tabs button{flex:1;padding:10px;border:0;border-radius:999px;background:none;color:var(--mut);font:inherit;font-weight:800;cursor:pointer}.tabs button.on{background:var(--sun);color:var(--ink)}
+.str{height:6px;background:var(--line);border-radius:3px;margin:-8px 0 14px;overflow:hidden}.str i{display:block;height:100%;width:0;transition:all .3s}
+.chk{display:flex;gap:10px;align-items:flex-start;font-weight:400}.chk input{width:auto;margin:4px 0 0}
+.err{color:#c0392b;font-size:14px;min-height:20px;margin-bottom:8px}.shake{animation:sh .4s}@keyframes sh{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.note{color:var(--mut);font-size:13px;margin-bottom:12px}
+#toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom));transform:translate(-50%,30px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:all .3s;z-index:50;white-space:nowrap}#toast.on{opacity:1;transform:translate(-50%,0)}
+.rip{position:absolute;width:40px;height:40px;margin:-20px;border-radius:50%;background:rgba(255,255,255,.6);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}@keyframes rip{to{transform:scale(7);opacity:0}}
+footer{padding:24px 0;color:var(--mut);font-size:13px;margin-top:24px;border-top:2px solid var(--line)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="demo">Демо-версия сайта для детского сада № 218</div>
+<header><div class="w top"><a class="logo" href="#/">🌞 Детский сад № 218</a>
+<nav><a href="#/" data-r="home"><b>🏠</b>Главная</a><a href="#/booking" data-r="booking"><b>✏️</b>Запись</a><a href="#/contacts" data-r="contacts"><b>📍</b>Контакты</a><a href="#/cabinet" data-r="cabinet"><b>👨‍👩‍👧</b>Кабинет</a></nav>
+<button class="btn m y" id="authBtn">Войти</button></div></header>
+
+<main class="w">
+<section class="pg" id="home">
+  <div class="hero">
+    <div><h1>Детский сад <em>№ 218</em></h1>
+      <p class="lead">Ростов-на-Дону, Пролетарский район. Узнайте, в какую группу пойдёт ваш малыш, как проходит день, и запишитесь на экскурсию.</p>
+      <div class="btns"><a class="btn y" href="#/booking">Записаться на экскурсию</a><button class="btn" id="regBtn">Кабинет родителя</button></div></div>
+    <div><div class="sunw" id="sun"><svg viewBox="0 0 300 300" aria-label="Солнышко"><g class="rays" stroke="#ffc93c" stroke-width="12" stroke-linecap="round"><path d="M150 18v34M150 248v34M18 150h34M248 150h34M57 57l24 24M219 219l24 24M243 57l-24 24M81 219l-24 24"/></g><circle cx="150" cy="150" r="82" fill="#ffc93c" stroke="#2b2a4c" stroke-width="6"/><circle cx="123" cy="138" r="9" fill="#2b2a4c"/><circle cx="177" cy="138" r="9" fill="#2b2a4c"/><path d="M118 172q32 32 64 0" fill="none" stroke="#2b2a4c" stroke-width="7" stroke-linecap="round"/><circle cx="106" cy="165" r="9" fill="#ff6b6b" opacity=".6"/><circle cx="194" cy="165" r="9" fill="#ff6b6b" opacity=".6"/></svg></div><p class="hint">Нажми на солнышко</p></div>
+  </div>
+
+  <div class="blk"><h2>В какую группу пойдёт малыш?</h2><p class="sub">Выберите возраст ребёнка.</p><div class="chips" id="ages"></div><div id="ageRes"></div></div>
+
+  <div class="blk"><h2>Как проходит день</h2><p class="sub">Пример распорядка. Точное время уточняйте в саду. Нажмите на время.</p><div class="day" id="day"></div><div class="card" id="dayRes" style="margin-top:6px"></div></div>
+
+  <div class="blk"><h2>Как записаться в сад</h2><p class="sub">Постановка в очередь на место, как правило, оформляется через Госуслуги. На сайте можно записаться на экскурсию и задать вопрос заведующей.</p><a class="btn y" href="#/booking">Оставить заявку</a></div>
+</section>
+
+<section class="pg" id="booking">
+  <h2>Записаться на экскурсию</h2><p class="sub">Оставьте обращение, и сад свяжется с вами.</p>
+  <form id="bf">
+    <label>Тема<select id="bT"><option>Экскурсия по саду</option><option>Вопрос о зачислении</option><option>Другой вопрос</option></select></label>
+    <label>Возраст ребёнка<select id="bA"><option>2–3 года</option><option>3–4 года</option><option>4–5 лет</option><option>5–6 лет</option><option>6–7 лет</option></select></label>
+    <label>Удобная дата<input id="bD" type="date"></label>
+    <label>Ваше имя<input id="bN" required autocomplete="name"></label>
+    <label>Телефон<input id="bP" type="tel" required autocomplete="tel" placeholder="+7"></label>
+    <label>Сообщение<textarea id="bM" rows="3" placeholder="Что хотите узнать?"></textarea></label>
+    <button class="btn y" type="submit">Отправить</button>
+  </form>
+  <div class="ok" id="ok" hidden>
+    <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="none" stroke="#4cc790" stroke-width="3"/><path d="M14 27l8 8 16-17" fill="none" stroke="#4cc790" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h2 style="margin-top:12px">Обращение сохранено</h2><p class="sub">Чтобы сад получил его, отправьте письмом или позвоните.</p>
+    <div class="btns" style="justify-content:center"><a class="btn y" id="ml" href="#">Отправить письмом</a><a class="btn" href="tel:+78632515250">Позвонить</a></div>
+  </div>
+</section>
+
+<section class="pg" id="contacts">
+  <h2>Контакты</h2><p class="sub">Данные из открытых источников. Перед запуском сайта их стоит проверить.</p>
+  <div class="card">
+    <div class="row"><span>Адрес<small>Пролетарский район</small></span><a href="https://yandex.ru/maps/?text=Ростов-на-Дону, 40-я линия, 88" target="_blank" rel="noopener">40-я линия, 88</a></div>
+    <div class="row"><span>Телефон</span><a href="tel:+78632515250">8 (863) 251-52-50</a></div>
+    <div class="row"><span>Почта</span><a href="mailto:detskijsad.mbdou218@yandex.ru">detskijsad.mbdou218@yandex.ru</a></div>
+    <div class="row"><span>Руководитель<small>по данным городского реестра</small></span><span>Кузнецова Е. Б. (и. о.)</span></div>
+  </div>
+  <a class="btn y" href="https://yandex.ru/maps/?text=Ростов-на-Дону, 40-я линия, 88" target="_blank" rel="noopener">Открыть на карте</a>
+</section>
+
+<section class="pg" id="cabinet"><div id="cb"></div></section>
+</main>
+<footer><div class="w">Демо-версия. Информация взята из открытых источников и требует проверки администрацией сада.</div></footer>
+<div id="toast"></div>
+
+<dialog id="dlg">
+  <div class="tabs"><button class="on" data-t="in">Вход</button><button data-t="up">Регистрация</button></div>
+  <p class="note">Демо: данные хранятся только в вашем браузере.</p>
+  <form id="fIn">
+    <label>Телефон<input id="iP" type="tel" required autocomplete="tel" placeholder="+7"></label>
+    <label>Пароль<input id="iW" type="password" required autocomplete="current-password"></label>
+    <div class="err" id="eIn"></div>
+    <div class="btns"><button class="btn y" type="submit">Войти</button><button class="btn" type="button" data-x>Отмена</button></div>
+  </form>
+  <form id="fUp" hidden>
+    <label>Имя родителя<input id="uN" required autocomplete="name"></label>
+    <label>Телефон<input id="uP" type="tel" required autocomplete="tel" placeholder="+7"></label>
+    <label>Почта<input id="uE" type="email" autocomplete="email"></label>
+    <label>Пароль (от 6 символов)<input id="uW" type="password" required minlength="6" autocomplete="new-password"></label>
+    <div class="str"><i id="sb"></i></div>
+    <label>Имя ребёнка (необязательно)<input id="uC"></label>
+    <label class="chk"><input type="checkbox" id="uA" required><span>Согласен на обработку персональных данных</span></label>
+    <div class="err" id="eUp"></div>
+    <div class="btns"><button class="btn y" type="submit">Зарегистрироваться</button><button class="btn" type="button" data-x>Отмена</button></div>
+  </form>
+</dialog>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const st={g(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}},s(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const digits=s=>s.replace(/\D/g,'');
+async function hash(s){try{const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}catch(e){return btoa(unescape(encodeURIComponent(s)))}}
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),2200)}
+function burst(x,y){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;const em=['🎈','⭐','🌈','🎉','💛'];for(let i=0;i<12;i++){const s=document.createElement('span');s.textContent=em[i%5];s.style.cssText=`position:fixed;left:${x}px;top:${y}px;font-size:24px;pointer-events:none;z-index:60`;document.body.appendChild(s);const a=Math.random()*6.28,d=70+Math.random()*100;s.animate([{transform:'translate(0,0) scale(.5)',opacity:1},{transform:`translate(${Math.cos(a)*d}px,${Math.sin(a)*d-70}px) scale(1.3)`,opacity:0}],{duration:1000,easing:'ease-out'}).onfinish=()=>s.remove()}}
+$('#sun').onclick=e=>burst(e.clientX,e.clientY);
+document.addEventListener('click',e=>{const b=e.target.closest('.btn');if(!b)return;const r=b.getBoundingClientRect(),s=document.createElement('span');s.className='rip';s.style.left=(e.clientX-r.left)+'px';s.style.top=(e.clientY-r.top)+'px';b.appendChild(s);setTimeout(()=>s.remove(),650)});
+
+const G=[['2–3 года','Первая младшая группа','🧸','Привыкаем к саду: игры с игрушками, песенки, первая лепка и рисование, спокойный режим дня.'],['3–4 года','Вторая младшая группа','🚂','Учимся играть вместе, слушать сказки, рисовать, лепить и самостоятельно одеваться.'],['4–5 лет','Средняя группа','🎨','Больше творчества и речи: рассказы, конструирование, первые задания на внимание и счёт.'],['5–6 лет','Старшая группа','🔭','Готовимся к школе постепенно: буквы и цифры в играх, опыты, подвижные игры.'],['6–7 лет','Подготовительная группа','🎒','Закрепляем навыки перед школой: счёт, чтение, письмо, работа в команде.']];
+$('#ages').innerHTML=G.map((g,i)=>`<button class="chip" data-i="${i}">${g[0]}</button>`).join('');
+$('#ages').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;$$('#ages .chip').forEach(c=>c.classList.toggle('on',c===b));const g=G[b.dataset.i];$('#ageRes').innerHTML=`<div class="res"><div class="em">${g[2]}</div><h3>${g[1]}</h3><p>${g[3]}</p><p class="note" style="margin:10px 0 14px">Примерное описание. Программу уточняйте у воспитателей.</p><a class="btn m y" href="#/booking">Записаться на экскурсию</a></div>`;burst(b.getBoundingClientRect().left+30,b.getBoundingClientRect().top)};
+const D=[['07:00','Приём детей','Встречаем малышей, свободные игры, утренняя зарядка.'],['08:30','Завтрак','Завтрак в группе, учимся пользоваться приборами.'],['09:00','Занятия','Игровые занятия: речь, рисование, лепка, музыка.'],['10:30','Прогулка','Свежий воздух, подвижные игры на участке.'],['12:00','Обед','Обед и подготовка ко сну.'],['12:30','Тихий час','Дневной сон.'],['15:30','Полдник','Лёгкий полдник после сна.'],['16:00','Игры и кружки','Творчество, конструирование, настольные игры.'],['17:30','Вечерняя прогулка','Игры на улице, встреча с родителями.']];
+$('#day').innerHTML=D.map((d,i)=>`<button data-i="${i}"><b>${d[0]}</b>${d[1]}</button>`).join('');
+function dayPick(i){$$('#day button').forEach((b,j)=>b.classList.toggle('on',j==i));$('#dayRes').innerHTML=`<b>${D[i][0]} · ${D[i][1]}</b><p>${D[i][2]}</p>`}
+$('#day').onclick=e=>{const b=e.target.closest('button');if(b)dayPick(b.dataset.i)};dayPick(2);
+
+// пользователи
+const users=()=>st.g('k_users',{});
+const cur=()=>{const p=st.g('k_sess',null),u=p&&users()[p];return u?{phone:p,...u}:null};
+function auth(){const u=cur();$('#authBtn').textContent=u?u.name.split(' ')[0]:'Войти'}
+const dlg=$('#dlg');
+function openDlg(t){tab(t||'in');dlg.showModal()}
+function tab(t){$$('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));$('#fIn').hidden=t!=='in';$('#fUp').hidden=t!=='up'}
+$('.tabs').onclick=e=>{const b=e.target.closest('button');if(b)tab(b.dataset.t)};
+$$('[data-x]').forEach(b=>b.onclick=()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+$('#authBtn').onclick=()=>cur()?location.hash='#/cabinet':openDlg('in');
+$('#regBtn').onclick=()=>cur()?location.hash='#/cabinet':openDlg('up');
+$('#uW').oninput=e=>{const v=e.target.value;let s=0;if(v.length>=6)s++;if(v.length>=9)s++;if(/[A-Za-zА-Яа-я]/.test(v)&&/\d/.test(v))s++;if(/[^\w]/.test(v))s++;const b=$('#sb');b.style.width=(s*25)+'%';b.style.background=['#ff6b6b','#ff6b6b','#ffc93c','#4cc3ff','#4cc790'][s]};
+function fail(f,id,m){$(id).textContent=m;f.classList.remove('shake');void f.offsetWidth;f.classList.add('shake')}
+function done(p){st.s('k_sess',p);dlg.close();auth();toast('Добро пожаловать!');burst(innerWidth/2,innerHeight/3);if(location.hash==='#/cabinet')route();else location.hash='#/cabinet'}
+$('#fUp').onsubmit=async e=>{e.preventDefault();const p=digits($('#uP').value),all=users();
+  if(p.length<10)return fail(e.target,'#eUp','Проверьте номер телефона');
+  if(all[p])return fail(e.target,'#eUp','Этот номер уже зарегистрирован. Войдите.');
+  all[p]={name:$('#uN').value.trim(),email:$('#uE').value.trim(),kid:$('#uC').value.trim(),h:await hash($('#uW').value)};st.s('k_users',all);e.target.reset();$('#sb').style.width=0;done(p)};
+$('#fIn').onsubmit=async e=>{e.preventDefault();const p=digits($('#iP').value),u=users()[p];
+  if(!u||u.h!==await hash($('#iW').value))return fail(e.target,'#eIn','Неверный номер или пароль');
+  e.target.reset();$('#eIn').textContent='';done(p)};
+
+// запись
+$('#bf').onsubmit=e=>{e.preventDefault();
+  const o={id:Date.now(),t:$('#bT').value,age:$('#bA').value,date:$('#bD').value,name:$('#bN').value.trim(),phone:$('#bP').value.trim(),msg:$('#bM').value.trim()};
+  st.s('k_req',[o,...st.g('k_req',[])]);
+  const body=`Тема: ${o.t}\nВозраст ребёнка: ${o.age}\nУдобная дата: ${o.date||'не указана'}\nИмя: ${o.name}\nТелефон: ${o.phone}\n\n${o.msg}`;
+  $('#ml').href='mailto:detskijsad.mbdou218@yandex.ru?subject='+encodeURIComponent('Обращение с сайта: '+o.t)+'&body='+encodeURIComponent(body);
+  e.target.hidden=true;const k=$('#ok');k.replaceWith(k.cloneNode(true));$('#ok').hidden=false;e.target.reset();burst(innerWidth/2,innerHeight/3)};
+function prefill(){const u=cur();if(u){$('#bN').value=u.name;$('#bP').value='+'+u.phone}}
+
+// кабинет
+function cab(){
+  const el=$('#cb'),u=cur();
+  if(!u){el.innerHTML='<h2>Кабинет родителя</h2><p class="sub">Обращения и данные ребёнка в одном месте.</p><div class="btns"><button class="btn y" id="c1">Зарегистрироваться</button><button class="btn" id="c2">Войти</button></div>';$('#c1').onclick=()=>openDlg('up');$('#c2').onclick=()=>openDlg('in');return}
+  const b=st.g('k_req',[]);
+  el.innerHTML=`<div class="me"><div class="av">${esc(u.name[0].toUpperCase())}</div><div><h2 style="margin:0">${esc(u.name)}</h2><span class="note">+${esc(u.phone)}${u.email?' · '+esc(u.email):''}</span></div></div>
+  <div class="card"><h3>Мой ребёнок</h3><label>Имя<input id="kid" value="${esc(u.kid||'')}"></label><button class="btn m y" id="ks">Сохранить</button></div>
+  <div class="card"><h3>Мои обращения</h3>${b.length?b.map(x=>`<div class="row"><span>${esc(x.t)}<small>${esc(x.age)}${x.date?' · '+esc(x.date):''}</small></span><button class="btn m r" data-del="${x.id}">Удалить</button></div>`).join(''):'<p class="note">Обращений пока нет.</p><a class="btn m" href="#/booking">Записаться на экскурсию</a>'}</div>
+  <button class="btn" id="out">Выйти</button>`;
+  $('#ks').onclick=()=>{const a=users();a[u.phone].kid=$('#kid').value.trim();st.s('k_users',a);toast('Сохранено')};
+  $('#out').onclick=()=>{st.s('k_sess',null);auth();cab();toast('Вы вышли')};
+}
+$('#cb').addEventListener('click',e=>{const d=e.target.closest('[data-del]');if(d){st.s('k_req',st.g('k_req',[]).filter(x=>String(x.id)!==d.dataset.del));cab();toast('Удалено')}});
+
+function route(){
+  const r=location.hash.replace('#/','')||'home',id=['home','booking','contacts','cabinet'].includes(r)?r:'home';
+  $$('.pg').forEach(p=>p.classList.toggle('on',p.id===id));
+  $$('nav a').forEach(a=>a.classList.toggle('on',a.dataset.r===id));
+  if(id==='booking'){prefill();$('#bf').hidden=false;$('#ok').hidden=true}
+  if(id==='cabinet')cab();
+  scrollTo(0,0);
+}
+addEventListener('hashchange',route);auth();route();
+</script>
+</body>
+</html>
